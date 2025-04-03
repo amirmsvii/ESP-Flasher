@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, scrolledtext, ttk
 import subprocess
 import threading
-import serial.tools.list_ports
+import serial.tools.list_ports #type: ignore[import]
 import os
 import datetime
 import re
@@ -16,7 +16,7 @@ class BatchFlasherGUI:
         # Add icon
         def resource_path(relative_path):
             try:
-                base_path = sys._MEIPASS
+                base_path = sys._MEIPASS # type: ignore[reportGeneralTypeIssues]
             except Exception:
                 base_path = os.path.abspath(".")
             return os.path.join(base_path, relative_path)
